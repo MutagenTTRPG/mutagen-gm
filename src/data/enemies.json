@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Mutant Brute",
+    "type": "Mutant",
+    "level": 5,
+    "faction": "Scavengers",
+    "attacks": [
+      {
+        "name": "Smash",
+        "damage": 20
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Mutant Sniper",
+    "type": "Mutant",
+    "level": 4,
+    "faction": "Scavengers",
+    "attacks": [
+      {
+        "name": "Sniper Shot",
+        "damage": 50
+      }
+    ]
+  }
+]
