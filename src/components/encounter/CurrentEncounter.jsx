@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import EncounterTitle from './EncounterTitle';
-import Enemy from '../../models/Enemy';
+import EnemyCard from './EnemyCard';
 
 const CurrentEncounter = ({ enemies }) => {
   const [encounterEnemies, setEncounterEnemies] = useState([]);
@@ -28,28 +28,25 @@ const CurrentEncounter = ({ enemies }) => {
   return (
     <div className='flex flex-col flex-grow p-5 rounded mr-5 bg-purple-950'>
       <EncounterTitle defaultTitle='Current Encounter' />
-      <ul>
+      <div className='flex flex-col justify-center w-full space-y-3 mt-3'>
         {encounterEnemies.sort((a, b) => b.level - a.level).map((enemy) => (
-          <li key={enemy.encounterId}>
-            {enemy.name} (Health: {enemy.currentHealth}/{enemy.maxHealth}, Shield: {enemy.shield}, Might: {enemy.might})
-            <button onClick={() => handleDamage(enemy.encounterId, 20)}>Deal 20 Damage</button>
-          </li>
+          <EnemyCard key={enemy.encounterId} enemy={enemy} handleDamage={handleDamage} />
         ))}
-      </ul>
+      </div>
 
       <h2 className='border-t border-solid border-slate-500 mt-3 pt-3'>Add Enemies</h2>
-      <ul className='space-y-5'>
+      <div className='space-y-5 flex flex-col'>
         {enemies.map((enemy) => (
-          <li key={enemy.id}>
+          <div key={enemy.id}>
             <div className='flex justify-start space-x-3 items-center'>
               <p className='flex flex-grow'>{enemy.name} (Level {enemy.level})</p>
               <button className='p-2 rounded bg-purple-500 cursor-pointer hover:bg-purple-600' onClick={() => addEnemy(enemy.id)}>
                 Add to Encounter
               </button>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 [
   {
     "id": "1",
-    "name": "Mutant Brute",
-    "type": "standard",
-    "level": 5,
-    "might": 10,
-    "faction": "Scavengers",
+    "name": "Husk",
+    "type": "weak",
+    "level": 1,
+    "might": 3,
+    "shield": 0,
+    "faction": "Plague",
     "attacks": [
       {
         "name": "Smash",
@@ -15,15 +16,31 @@
   },
   {
     "id": "2",
-    "name": "Mutant Sniper",
-    "type": "weak",
-    "level": 4,
-    "faction": "Scavengers",
-    "might": 5,
+    "name": "Spitter",
+    "type": "standard",
+    "level": 1,
+    "faction": "Plague",
+    "might": 3,
+    "shield": 0,
     "attacks": [
       {
         "name": "Sniper Shot",
         "damage": 50
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Squabble",
+    "type": "elite",
+    "level": 1,
+    "faction": "Plague",
+    "might": 5,
+    "shield": 20,
+    "attacks": [
+      {
+        "name": "Blight",
+        "damage": 30
       }
     ]
   }

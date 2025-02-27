@@ -1,7 +1,7 @@
 // src/models/Enemy.js
 
 class Enemy {
-  constructor(id, name, type, level, faction, attacks, might) {
+  constructor(id, name, type, level, faction, attacks, might, shield) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -9,9 +9,9 @@ class Enemy {
     this.faction = faction;
     this.attacks = attacks;
     this.might = might;
+    this.shield = shield;
     this.maxHealth = this.health();
     this.currentHealth = this.health();
-    this.shield = 50;
     this.encounterId = id + Date.now(); // Unique ID for the encounter
   }
 
@@ -63,7 +63,16 @@ class Enemy {
 
   // Method to clone the enemy prototype
   clone() {
-    return new Enemy(this.id, this.name, this.type, this.level, this.faction, this.attacks, this.might);
+    return new Enemy(
+      this.id,
+      this.name,
+      this.type,
+      this.level,
+      this.faction,
+      this.attacks,
+      this.might,
+      this.shield
+    );
   }
 }
 
