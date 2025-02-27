@@ -1,5 +1,5 @@
 // src/pages/EnemiesList.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Enemies = () => {
   const [showModal, setShowModal] = useState(false);

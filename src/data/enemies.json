@@ -2,8 +2,9 @@
   {
     "id": "1",
     "name": "Mutant Brute",
-    "type": "Mutant",
+    "type": "standard",
     "level": 5,
+    "might": 10,
     "faction": "Scavengers",
     "attacks": [
       {
@@ -15,9 +16,10 @@
   {
     "id": "2",
     "name": "Mutant Sniper",
-    "type": "Mutant",
+    "type": "weak",
     "level": 4,
     "faction": "Scavengers",
+    "might": 5,
     "attacks": [
       {
         "name": "Sniper Shot",

@@ -6,8 +6,8 @@ export const loadEnemies = () => {
   const enemies = [];
   
   enemiesData.forEach(enemyData => {
-    const { id, name, type, level, faction, attacks } = enemyData;
-    const enemy = new Enemy(id, name, type, level, faction, attacks);
+    const { id, name, type, level, faction, attacks, might } = enemyData;
+    const enemy = new Enemy(id, name, type, level, faction, attacks, might);
     enemies.push(enemy);
   });
 
