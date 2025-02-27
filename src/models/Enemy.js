@@ -11,6 +11,7 @@ class Enemy {
     this.health = 100;  // default health, can be updated later
     this.might = 10;    // default might, can be updated later
     this.shield = 50;   // default shield, can be updated later
+    this.encounterId = id + Date.now(); // Unique ID for the encounter
   }
 
   // Method for handling damage
