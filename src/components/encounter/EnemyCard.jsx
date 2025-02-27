@@ -5,7 +5,8 @@ const EnemyCard = ({ enemy, handleDamage }) => {
   const [damage, setDamage] = React.useState(0);
 
   return (
-    <div key={enemy.encounterId} className='flex flex-grow space-x-3 p-2 bg-purple-900 rounded shadow-md justify-start items-center'>
+    <div key={enemy.encounterId} className='flex-col flex-grow space-y-1 p-2 bg-purple-900 rounded shadow-md justify-center items-start'>
+      <div className='flex items-center space-x-3'>
       <p className='text-xl flex mr-3'>{enemy.name}</p>
       <div className='flex items-center'>
         <img src='/src/assets/health-plus.svg' alt='Health' className='w-5 h-5 mr-1' />
@@ -31,7 +32,14 @@ const EnemyCard = ({ enemy, handleDamage }) => {
         onClick={() => handleDamage(enemy.encounterId, damage)}
       >
         Deal Damage
-      </button>
+        </button>
+      </div>
+      <div >
+
+      </div>
+      <div className='flex items-center space-x-1'>
+        <p className='flex text-slate-200 font-light italic text-sm'>Horde, Weak</p>
+      </div>
     </div>
   );
 };
@@ -51,4 +59,5 @@ EnemyCard.propTypes = {
     might: PropTypes.number,
     clone: PropTypes.func,
   }),
+  handleDamage: PropTypes.func.isRequired
 };

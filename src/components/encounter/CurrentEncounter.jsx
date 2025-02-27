@@ -1,19 +1,8 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import EncounterTitle from './EncounterTitle';
 import EnemyCard from './EnemyCard';
 
-const CurrentEncounter = ({ enemies }) => {
-  const [encounterEnemies, setEncounterEnemies] = useState([]);
-
-  const addEnemy = (enemyId) => {
-    const enemyPrototype = enemies.find((enemy) => enemy.id === enemyId);
-    if (enemyPrototype) {
-      const clonedEnemy = enemyPrototype.clone();
-      setEncounterEnemies((prevEnemies) => [...prevEnemies, clonedEnemy]);
-    }
-  };
-
+const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
   const handleDamage = (enemyEncounterId, damage) => {
     encounterEnemies.forEach((enemy) => {
       if (enemy.encounterId === enemyEncounterId) {
@@ -33,26 +22,12 @@ const CurrentEncounter = ({ enemies }) => {
           <EnemyCard key={enemy.encounterId} enemy={enemy} handleDamage={handleDamage} />
         ))}
       </div>
-
-      <h2 className='border-t border-solid border-slate-500 mt-3 pt-3'>Add Enemies</h2>
-      <div className='space-y-5 flex flex-col'>
-        {enemies.map((enemy) => (
-          <div key={enemy.id}>
-            <div className='flex justify-start space-x-3 items-center'>
-              <p className='flex flex-grow'>{enemy.name} (Level {enemy.level})</p>
-              <button className='p-2 rounded bg-purple-500 cursor-pointer hover:bg-purple-600' onClick={() => addEnemy(enemy.id)}>
-                Add to Encounter
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
 
 CurrentEncounter.propTypes = {
-  enemies: PropTypes.arrayOf(
+  encounterEnemies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
@@ -64,6 +39,7 @@ CurrentEncounter.propTypes = {
       clone: PropTypes.func.isRequired, // Ensure clone method exists
     })
   ).isRequired,
+  setEncounterEnemies: PropTypes.func.isRequired,
 };
 
 
