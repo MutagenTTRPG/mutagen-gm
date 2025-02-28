@@ -1,18 +1,19 @@
 // src/models/Enemy.js
 
 class Enemy {
-  constructor(id, name, type, level, faction, attacks, might, shield, traits) {
+  constructor({ id, name, type, level, faction, attacks, currentMight, maxMight, shield, traits, currentHealth }) {
     this.id = id;
     this.name = name;
     this.type = type;
     this.level = level;
     this.faction = faction;
     this.attacks = attacks;
-    this.might = might;
+    this.currentMight = currentMight ?? maxMight;
+    this.maxMight = maxMight;
     this.shield = shield;
     this.traits = traits;
     this.maxHealth = this.health();
-    this.currentHealth = this.health();
+    this.currentHealth = currentHealth ?? this.health();
     this.encounterId = id + Date.now(); // Unique ID for the encounter
   }
 
@@ -29,9 +30,9 @@ class Enemy {
     }
 
     if (damage > 0) {
-      const damageAfterMight = Math.max(damage - this.might, 0);
+      const damageAfterMight = Math.max(damage - this.currentMight, 0);
       this.currentHealth -= damageAfterMight;
-      this.might = Math.max(this.might - 1, 0);
+      this.currentMight = Math.max(this.currentMight - 1, 0);
     }
 
     if (this.currentHealth <= 0) {
@@ -41,7 +42,7 @@ class Enemy {
   }
 
   health() {
-    return this.might * this.typeMod();
+    return this.maxMight * this.typeMod();
   }
 
 
@@ -64,16 +65,21 @@ class Enemy {
 
   // Method to clone the enemy prototype
   clone() {
-    return new Enemy(
-      this.id,
-      this.name,
-      this.type,
-      this.level,
-      this.faction,
-      this.attacks,
-      this.might,
-      this.shield,
-      this.traits
+    return new Enemy({
+      id: this.id,
+      encounterId: this.id + Date.now(),
+      name: this.name,
+      type: this.type,
+      level: this.level,
+      faction: this.faction,
+      attacks: this.attacks,
+      currentMight: this.currentMight,
+      maxMight: this.maxMight,
+      shield: this.shield,
+      traits: this.traits,
+      currentHealth: this.currentHealth,
+      maxHealth: this.maxHealth
+    }
     );
   }
 }

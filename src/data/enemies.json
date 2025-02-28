@@ -4,7 +4,7 @@
     "name": "Husk",
     "type": "weak",
     "level": 1,
-    "might": 3,
+    "maxMight": 3,
     "shield": 0,
     "faction": "Plague",
     "traits": [
@@ -52,7 +52,7 @@
     "type": "standard",
     "level": 1,
     "faction": "Plague",
-    "might": 3,
+    "maxMight": 3,
     "shield": 0,
     "traits": [
       {
@@ -99,7 +99,7 @@
     "type": "elite",
     "level": 1,
     "faction": "Plague",
-    "might": 5,
+    "maxMight": 5,
     "shield": 20,
     "traits": [
       {

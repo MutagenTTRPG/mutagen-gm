@@ -6,7 +6,7 @@ const EnemyList = ({ enemies, addEnemy }) => {
       <h2 className='border-t border-solid border-slate-500 mt-3 pt-3'>Add Enemies</h2>
       <div className='space-y-5 flex flex-col'>
         {enemies.map((enemy) => (
-          <div key={enemy.id} className='flex justify-start space-x-3 items-center'>
+          <div key={enemy.encounterId} className='flex justify-start space-x-3 items-center'>
             <p className='flex flex-grow'>{enemy.name}</p>
             <p className='p-1 bg-slate-700 px-4 text-center'>{enemy.level}</p>
             <button 

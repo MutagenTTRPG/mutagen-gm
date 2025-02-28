@@ -14,7 +14,7 @@ const EnemyCard = ({ enemy, handleDamage }) => {
       </div>
       <div className='flex items-center'>
         <img src='/src/assets/might2.svg' alt='Might' className='w-6 h-6 mr-1' />
-        <p className='flex'>{enemy.might}</p>
+          <p className='flex'>{enemy.currentMight}/{enemy.maxMight}</p>
       </div>
       <div className='flex items-center'>
         <img src='/src/assets/shield.svg' alt='Shield' className='w-5 h-5 mr-1' />
@@ -60,7 +60,8 @@ EnemyCard.propTypes = {
     maxHealth: PropTypes.number,
     takeDamage: PropTypes.func,
     shield: PropTypes.number,
-    might: PropTypes.number,
+    currentMight: PropTypes.number,
+    maxMight: PropTypes.number,
     attacks: PropTypes.arrayOf(PropTypes.string),
     traits: PropTypes.arrayOf(PropTypes.string),
     clone: PropTypes.func,

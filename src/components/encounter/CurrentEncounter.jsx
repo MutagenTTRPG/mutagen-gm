@@ -1,8 +1,28 @@
 import PropTypes from 'prop-types';
 import EncounterTitle from './EncounterTitle';
 import EnemyCard from './EnemyCard';
+import { useEffect } from 'react';
+import Enemy from '../../models/Enemy';
 
 const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
+  useEffect(() => {
+    const savedEnemies = localStorage.getItem('encounterEnemies');
+      if (savedEnemies) {
+        const parsedEnemies = JSON.parse(savedEnemies)
+
+        const newEnemies = parsedEnemies.map(enemyData => new Enemy(enemyData));
+        setEncounterEnemies(newEnemies);
+      }
+    }, []);
+
+  // Save to localStorage whenever encounterEnemies changes
+  useEffect(() => {
+    if (encounterEnemies.length > 0) {
+        const plainEnemies = encounterEnemies.map(enemy => ({ ...enemy }));
+        localStorage.setItem('encounterEnemies', JSON.stringify(plainEnemies))
+    }
+  }, [encounterEnemies]);
+
   const handleDamage = (enemyEncounterId, damage) => {
     encounterEnemies.forEach((enemy) => {
       if (enemy.encounterId === enemyEncounterId) {
@@ -16,7 +36,18 @@ const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
 
   return (
     <div className='flex flex-col flex-grow p-5 rounded mr-5'>
-      <EncounterTitle defaultTitle='Current Encounter' />
+      <div className='flex justify-between items-center'>
+        <EncounterTitle defaultTitle='Current Encounter' />
+        <button 
+          className='bg-red-500 text-white px-4 py-2 rounded' 
+          onClick={() => {
+            setEncounterEnemies([]);
+            localStorage.removeItem('encounterEnemies');
+          }}
+        >
+          Clear Encounter
+        </button>
+        </div>
       <div className='flex flex-col justify-center w-full space-y-3 mt-3'>
         {encounterEnemies.sort((a, b) => b.level - a.level).map((enemy) => (
           <EnemyCard key={enemy.encounterId} enemy={enemy} handleDamage={handleDamage} />
@@ -35,7 +66,8 @@ CurrentEncounter.propTypes = {
       currentHealth: PropTypes.number,
       maxHealth: PropTypes.number,
       shield: PropTypes.number,
-      might: PropTypes.number,
+      currentMight: PropTypes.number,
+      maxMight: PropTypes.number,
       attacks: PropTypes.arrayOf(PropTypes.string),
       clone: PropTypes.func.isRequired
     })
