@@ -25,6 +25,7 @@ const EnemyCard = ({ enemy, handleDamage }) => {
         type='number' 
         className='p-1 w-16 bg-purple-800 text-center rounded' 
         value={damage} 
+        min='0'
         onChange={(e) => setDamage(Number(e.target.value))} 
       />
       <button 

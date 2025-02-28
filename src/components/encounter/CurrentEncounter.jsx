@@ -38,14 +38,13 @@ const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
     <div className='flex flex-col flex-grow p-5 rounded mr-5'>
       <div className='flex justify-between items-center'>
         <EncounterTitle defaultTitle='Current Encounter' />
-        <button 
-          className='bg-red-500 text-white px-4 py-2 rounded' 
+        <button  
           onClick={() => {
             setEncounterEnemies([]);
             localStorage.removeItem('encounterEnemies');
           }}
         >
-          Clear Encounter
+          <img src='/src/assets/bin.svg' alt='Delete' className='w-4 h-4 mr-2 hover:scale-105 cursor-pointer' />
         </button>
         </div>
       <div className='flex flex-col justify-center w-full space-y-3 mt-3'>
