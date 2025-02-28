@@ -1,7 +1,7 @@
 // src/models/Enemy.js
 
 class Enemy {
-  constructor(id, name, type, level, faction, attacks, might, shield) {
+  constructor(id, name, type, level, faction, attacks, might, shield, traits) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -10,6 +10,7 @@ class Enemy {
     this.attacks = attacks;
     this.might = might;
     this.shield = shield;
+    this.traits = traits;
     this.maxHealth = this.health();
     this.currentHealth = this.health();
     this.encounterId = id + Date.now(); // Unique ID for the encounter
@@ -71,7 +72,8 @@ class Enemy {
       this.faction,
       this.attacks,
       this.might,
-      this.shield
+      this.shield,
+      this.traits
     );
   }
 }

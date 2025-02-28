@@ -34,8 +34,12 @@ const EnemyCard = ({ enemy, handleDamage }) => {
         Deal Damage
         </button>
       </div>
-      <div >
-
+      <div className='flex items-center space-x-1 w-1/2'>
+        {enemy.traits.map((trait) => (
+          <div key={trait} className='flex p-1 bg-purple-700 text-xs rounded flex-grow justify-center'>
+            {trait.code}: {trait.value}
+          </div>
+        ))}
       </div>
       <div className='flex items-center space-x-1'>
         <p className='flex text-slate-200 font-light italic text-sm'>Horde, Weak</p>
@@ -57,6 +61,7 @@ EnemyCard.propTypes = {
     takeDamage: PropTypes.func,
     shield: PropTypes.number,
     might: PropTypes.number,
+    traits: PropTypes.arrayOf(PropTypes.string),
     clone: PropTypes.func,
   }),
   handleDamage: PropTypes.func.isRequired

@@ -7,6 +7,38 @@
     "might": 3,
     "shield": 0,
     "faction": "Plague",
+    "traits": [
+      {
+        "name": "Strength",
+        "code": "STR",
+        "value": 30
+      },
+      {
+        "name": "Discipline",
+        "code": "DSC",
+        "value": 25
+      },
+      {
+        "name": "Constitution",
+        "code": "CON",
+        "value": 20
+      },
+      {
+        "name": "Intelligence",
+        "code": "INT",
+        "value": 10
+      },
+      {
+        "name": "Sense",
+        "code": "SNS",
+        "value": 25
+      },
+      {
+        "name": "Will",
+        "code": "WLL",
+        "value": 10
+      }
+    ],
     "attacks": [
       {
         "name": "Smash",
@@ -22,6 +54,38 @@
     "faction": "Plague",
     "might": 3,
     "shield": 0,
+    "traits": [
+      {
+        "name": "Strength",
+        "code": "STR",
+        "value": 30
+      },
+      {
+        "name": "Discipline",
+        "code": "DSC",
+        "value": 25
+      },
+      {
+        "name": "Constitution",
+        "code": "CON",
+        "value": 20
+      },
+      {
+        "name": "Intelligence",
+        "code": "INT",
+        "value": 10
+      },
+      {
+        "name": "Sense",
+        "code": "SNS",
+        "value": 25
+      },
+      {
+        "name": "Will",
+        "code": "WLL",
+        "value": 10
+      }
+    ],
     "attacks": [
       {
         "name": "Sniper Shot",
@@ -37,6 +101,38 @@
     "faction": "Plague",
     "might": 5,
     "shield": 20,
+    "traits": [
+      {
+        "name": "Strength",
+        "code": "STR",
+        "value": 30
+      },
+      {
+        "name": "Discipline",
+        "code": "DSC",
+        "value": 25
+      },
+      {
+        "name": "Constitution",
+        "code": "CON",
+        "value": 20
+      },
+      {
+        "name": "Intelligence",
+        "code": "INT",
+        "value": 10
+      },
+      {
+        "name": "Sense",
+        "code": "SNS",
+        "value": 25
+      },
+      {
+        "name": "Will",
+        "code": "WLL",
+        "value": 10
+      }
+    ],
     "attacks": [
       {
         "name": "Blight",
