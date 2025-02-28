@@ -5,7 +5,7 @@ const EnemyCard = ({ enemy, handleDamage }) => {
   const [damage, setDamage] = React.useState(0);
 
   return (
-    <div key={enemy.encounterId} className='flex-col flex-grow space-y-1 p-2 bg-purple-900 rounded shadow-md justify-center items-start'>
+    <div key={enemy.encounterId} className='flex-col flex-grow space-y-1 p-4 bg-[#3e2f67] rounded shadow-md justify-center items-start'>
       <div className='flex items-center space-x-3'>
       <p className='text-xl flex mr-3'>{enemy.name}</p>
       <div className='flex items-center'>
@@ -61,6 +61,7 @@ EnemyCard.propTypes = {
     takeDamage: PropTypes.func,
     shield: PropTypes.number,
     might: PropTypes.number,
+    attacks: PropTypes.arrayOf(PropTypes.string),
     traits: PropTypes.arrayOf(PropTypes.string),
     clone: PropTypes.func,
   }),

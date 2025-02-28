@@ -22,13 +22,9 @@ const Home = () => {
   };
 
   return (
-    <div className='container w-full flex flex-col'>
-      <h1 className='text-4xl mb-5'>Mutagen GM</h1>
-
-      <div className='flex w-full'>
-        <CurrentEncounter encounterEnemies={encounterEnemies} setEncounterEnemies={setEncounterEnemies} />
-        <EnemyList enemies={enemies} addEnemy={addEnemy} setEncounterEnemies={setEncounterEnemies} />
-      </div>
+    <div className='container w-full flex'>
+      <CurrentEncounter encounterEnemies={encounterEnemies} setEncounterEnemies={setEncounterEnemies} />
+      <EnemyList enemies={enemies} addEnemy={addEnemy} setEncounterEnemies={setEncounterEnemies} />
     </div>
   );
 };
