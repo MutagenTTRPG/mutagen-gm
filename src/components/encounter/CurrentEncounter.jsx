@@ -67,7 +67,7 @@ CurrentEncounter.propTypes = {
       shield: PropTypes.number,
       currentMight: PropTypes.number,
       maxMight: PropTypes.number,
-      attacks: PropTypes.arrayOf(PropTypes.string),
+      actions: PropTypes.arrayOf(PropTypes.string),
       clone: PropTypes.func.isRequired
     })
   ).isRequired,

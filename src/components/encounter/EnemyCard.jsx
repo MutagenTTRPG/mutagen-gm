@@ -20,7 +20,12 @@ const EnemyCard = ({ enemy, handleDamage }) => {
         <img src='/src/assets/shield.svg' alt='Shield' className='w-5 h-5 mr-1' />
         <p className='flex'>{enemy.shield}</p>
       </div>
+      <div className='flex items-center'>
+        <img src='/src/assets/speed.svg' alt='Shield' className='w-5 h-5 mr-1' />
+        <p className='flex'>{enemy.speed}</p>
+      </div>
       <span className='flex-grow'></span>
+      
       <input 
         type='number' 
         className='p-1 w-16 bg-purple-800 text-center rounded' 
@@ -33,7 +38,8 @@ const EnemyCard = ({ enemy, handleDamage }) => {
         onClick={() => handleDamage(enemy.encounterId, damage)}
       >
         Deal Damage
-        </button>
+      </button>
+        
       </div>
       <div className='flex items-center space-x-1 w-1/2'>
         {enemy.traits.map((trait) => (
@@ -63,7 +69,8 @@ EnemyCard.propTypes = {
     shield: PropTypes.number,
     currentMight: PropTypes.number,
     maxMight: PropTypes.number,
-    attacks: PropTypes.arrayOf(PropTypes.string),
+    speed: PropTypes.number,
+    actions: PropTypes.arrayOf(PropTypes.string),
     traits: PropTypes.arrayOf(PropTypes.string),
     clone: PropTypes.func,
   }),

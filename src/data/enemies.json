@@ -2,11 +2,13 @@
   {
     "id": "1",
     "name": "Husk",
+    "description": "A husk is a weak enemy that is easy to defeat.",
     "type": "weak",
     "level": 1,
     "maxMight": 3,
     "shield": 0,
     "faction": "Plague",
+    "speed": 3,
     "traits": [
       {
         "name": "Strength",
@@ -39,21 +41,26 @@
         "value": 10
       }
     ],
-    "attacks": [
+    "actions": [
       {
-        "name": "Smash",
-        "damage": 20
+        "name": "Swipe",
+        "description": "The husk lashes out at the target with its fists.",
+        "damage": "1d6 + 1",
+        "time": 2,
+        "range": 1
       }
     ]
   },
   {
     "id": "2",
     "name": "Spitter",
+    "description": "A spitter is a ranged enemy that can deal damage from a distance.",
     "type": "standard",
     "level": 1,
     "faction": "Plague",
     "maxMight": 3,
     "shield": 0,
+    "speed": 3,
     "traits": [
       {
         "name": "Strength",
@@ -86,21 +93,35 @@
         "value": 10
       }
     ],
-    "attacks": [
+    "actions": [
       {
-        "name": "Sniper Shot",
-        "damage": 50
+        "name": "Bile",
+        "description": "The spitter shoots corrosive bile at the target.",
+        "damage": "1d4 + 2",
+        "time": 2,
+        "range": 20,
+        "ammo": 4
+      },
+      {
+        "name": "Acid Splash",
+        "description": "The spitter launches a ball of acid that splashes nearby.",
+        "damage": "1d4 + 2",
+        "time": 2,
+        "range": 20,
+        "ammo": 4
       }
     ]
   },
   {
     "id": "3",
     "name": "Squabble",
+    "description": "A squabble is a tanky enemy that can take a lot of damage.",
     "type": "elite",
     "level": 1,
     "faction": "Plague",
     "maxMight": 5,
     "shield": 20,
+    "speed": 3,
     "traits": [
       {
         "name": "Strength",
@@ -133,7 +154,7 @@
         "value": 10
       }
     ],
-    "attacks": [
+    "actions": [
       {
         "name": "Blight",
         "damage": 30

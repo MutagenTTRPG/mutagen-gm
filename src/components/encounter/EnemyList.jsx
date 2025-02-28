@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const EnemyList = ({ enemies, addEnemy }) => {
   return (
     <div className='w-1/3 rounded border border-purple-500 p-5'>
-      <h2 className='border-t border-solid border-slate-500 mt-3 pt-3'>Add Enemies</h2>
+      <h2 className='border-b border-solid border-slate-500 mb-3 pb-3 text-2xl'>Add Enemies</h2>
       <div className='space-y-5 flex flex-col'>
         {enemies.map((enemy) => (
           <div key={enemy.encounterId} className='flex justify-start space-x-3 items-center'>
