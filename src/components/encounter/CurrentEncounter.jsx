@@ -7,13 +7,21 @@ import Enemy from '../../models/Enemy';
 const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
   useEffect(() => {
     const savedEnemies = localStorage.getItem('encounterEnemies');
-      if (savedEnemies) {
-        const parsedEnemies = JSON.parse(savedEnemies)
-
-        const newEnemies = parsedEnemies.map(enemyData => new Enemy(enemyData));
-        setEncounterEnemies(newEnemies);
-      }
-    }, []);
+    if (savedEnemies) {
+      const parsedEnemies = JSON.parse(savedEnemies);
+    
+      let counter = 0
+      const newEnemies = parsedEnemies.map(enemyData => {
+        const enemy = new Enemy(enemyData);
+        enemy.encounterId = `${enemy.id}_${Date.now()}_${counter}}`; // Ensures uniqueness
+        counter++;
+        return enemy;
+      });
+    
+      console.log(newEnemies);
+      setEncounterEnemies(newEnemies);
+    }    
+  }, []);
 
   // Save to localStorage whenever encounterEnemies changes
   useEffect(() => {
