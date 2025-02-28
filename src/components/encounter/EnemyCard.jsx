@@ -48,9 +48,6 @@ const EnemyCard = ({ enemy, handleDamage }) => {
           </div>
         ))}
       </div>
-      <div className='flex items-center space-x-1'>
-        <p className='flex text-slate-200 font-light italic text-sm'>Horde, Weak</p>
-      </div>
     </div>
   );
 };

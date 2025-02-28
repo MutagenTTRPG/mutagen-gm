@@ -47,7 +47,8 @@
         "description": "The husk lashes out at the target with its fists.",
         "damage": "1d6 + 1",
         "time": 2,
-        "range": 1
+        "range": 1,
+        "tags": ["Attack", "Melee", "Agile"]
       }
     ]
   },
@@ -100,7 +101,8 @@
         "damage": "1d4 + 2",
         "time": 2,
         "range": 20,
-        "ammo": 4
+        "ammo": 4,
+        "tags": ["Attack", "Ranged"]
       },
       {
         "name": "Acid Splash",
@@ -108,7 +110,8 @@
         "damage": "1d4 + 2",
         "time": 2,
         "range": 20,
-        "ammo": 4
+        "ammo": 4,
+        "tags": ["Attack", "Ranged"]
       }
     ]
   },
@@ -165,6 +168,120 @@
         "damage": "1d6 + 2",
         "time": 2,
         "range": 10
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Thrall (Brute)",
+    "description": "A bulky plague victim that is slow but hits hard.",
+    "type": "standard",
+    "level": 2,
+    "maxMight": 5,
+    "shield": 0,
+    "faction": "Plague",
+    "speed": 3,
+    "traits": [
+      {
+        "name": "Strength",
+        "code": "STR",
+        "value": 40
+      },
+      {
+        "name": "Discipline",
+        "code": "DSC",
+        "value": 30
+      },
+      {
+        "name": "Constitution",
+        "code": "CON",
+        "value": 30
+      },
+      {
+        "name": "Intelligence",
+        "code": "INT",
+        "value": 15
+      },
+      {
+        "name": "Sense",
+        "code": "SNS",
+        "value": 25
+      },
+      {
+        "name": "Will",
+        "code": "WLL",
+        "value": 20
+      }
+    ],
+    "actions": [
+      {
+        "name": "Hammer",
+        "description": "The thrall slams down its massive hammer",
+        "damage": "1d8 + 3",
+        "time": 2,
+        "range": 1,
+        "tags": ["Attack", "Melee", "Two-Handed","Impact"]
+      },
+      {
+        "name": "Shove",
+        "description": "The thrall pushes its target back",
+        "time": 2,
+        "range": 1,
+        "tags": ["Attack", "Melee", "Impact"]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Thrall (Rifle)",
+    "description": "A plague victim still able to weild a rifle.",
+    "type": "standard",
+    "level": 2,
+    "maxMight": 3,
+    "shield": 10,
+    "faction": "Plague",
+    "speed": 3,
+    "traits": [
+      {
+        "name": "Strength",
+        "code": "STR",
+        "value": 20
+      },
+      {
+        "name": "Discipline",
+        "code": "DSC",
+        "value": 40
+      },
+      {
+        "name": "Constitution",
+        "code": "CON",
+        "value": 25
+      },
+      {
+        "name": "Intelligence",
+        "code": "INT",
+        "value": 15
+      },
+      {
+        "name": "Sense",
+        "code": "SNS",
+        "value": 40
+      },
+      {
+        "name": "Will",
+        "code": "WLL",
+        "value": 20
+      }
+    ],
+    "actions": [
+      {
+        "name": "Corroded Rifle",
+        "description": "The thrall shoots its corroded rifle at the target.",
+        "damage": "1d6 + 2",
+        "time": 2,
+        "range": 15,
+        "ammo": 4,
+        "tags": ["Attack", "Ranged", "Two-Handed"]
       }
     ]
   }

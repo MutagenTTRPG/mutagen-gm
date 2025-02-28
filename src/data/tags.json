@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Melee",
+    "description": "This action is a melee attack."
+  },
+  {
+    "name": "Ranged",
+    "description": "This action is a ranged attack. -10 Penalty to Strike within Melee range."
+  },
+  {
+    "name": "Attack",
+    "description": "Each subsequent attack action has a stacking -25 penalty to Strike."
+  },
+  {
+    "name": "Agile",
+    "description": "MAP penalites are reduced by 10"
+  },
+  {
+    "name": "Impact",
+    "description": "This attack applies a stack of Unbalanced to the target"
+  },
+  {
+    "name" :"Two-Handed",
+    "description": "This weapon requires two hands to use."
+  }
+]

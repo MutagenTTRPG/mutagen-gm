@@ -9,15 +9,15 @@ function Navbar() {
       <div className="h-1 w-full border-b border-solid border-purple-200"></div>
       <Link
         to="/"
-        className={`p-3 rounded-lg ${location.pathname === '/' ? 'bg-purple-700' : 'hover:bg-purple-700'}`}
+        className={`p-3 rounded-lg cursor-pointer ${location.pathname === '/' ? 'bg-purple-700' : 'hover:bg-purple-700'} `}
       >
-        <img src="/src/assets/combat-light.svg" alt="Combat" className="w-7 h-7" />
+        <img src="/src/assets/combat-light.svg" alt="Combat" className="w-7 h-7 cursor-pointer" />
       </Link>
       <Link
         to="/enemies"
-        className={`p-3 rounded-lg ${location.pathname === '/enemies' ? 'bg-purple-700' : 'hover:bg-purple-700'}`}
+        className={`p-3 rounded-lg cursor-pointer ${location.pathname === '/enemies' ? 'bg-purple-700' : 'hover:bg-purple-700'}`}
       >
-        <img src="/src/assets/enemy-light.svg" alt="Enemy" className="w-7 h-7" />
+        <img src="/src/assets/enemy-light.svg" alt="Enemy" className="w-7 h-7 cursor-pointer" />
       </Link>
     </nav>
   );

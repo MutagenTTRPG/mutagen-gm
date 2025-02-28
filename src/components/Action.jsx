@@ -1,10 +1,11 @@
 // A component for common actions such as attacks
 
 import PropTypes from 'prop-types';
+import Tag from './Tag';
 
 const Action = ({ action }) => {
   return (
-    <div className="bg-violet-600 text-sm text-white px-2 py-3 rounded-md ">
+    <div className="bg-violet-600 text-sm text-white px-2 py-3 rounded-md flex flex-col space-y-2">
       <p className='font-bold'>{action.name}</p>
       <p className="text-sm italic">{action.description}</p>
 
@@ -36,6 +37,12 @@ const Action = ({ action }) => {
             <p className='flex'>{action.time}</p>
           </div>
         )}
+      </div>
+
+      <div className='flex justify-start space-x-2'>
+        { action.tags && action.tags.map((tag) => (
+          <Tag key={tag.name} tag={tag} />
+        ))}
       </div>
     </div>
   );
