@@ -156,8 +156,15 @@
     ],
     "actions": [
       {
-        "name": "Blight",
-        "damage": 30
+        "name": "Indescisive",
+        "description": "At the start of each round, roll a d4 with the following outcomes. 1: The Squabble is indecisive and can only take the Move action, 2: Only the Left Head can take action, 3: Only the Right Head can take action, 4: Both heads can take action."
+      },
+      {
+        "name": "Mind Blast",
+        "description": "The Squabble's left head releases a psychic blast that damages the target.",
+        "damage": "1d6 + 2",
+        "time": 2,
+        "range": 10
       }
     ]
   }
