@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="flex">
         <Navbar />
-        <div className="ml-48 w-full p-4">
+        <div className="ml-20 w-full p-4">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/enemies" element={<Enemies />} />

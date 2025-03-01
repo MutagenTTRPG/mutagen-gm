@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import EncounterTitle from './EncounterTitle';
-import EnemyCard from './EnemyCard';
+import CombatCard from './CombatCard';
 import { useEffect } from 'react';
 import Enemy from '../../models/Enemy';
 
@@ -18,7 +18,6 @@ const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
         return enemy;
       });
     
-      console.log(newEnemies);
       setEncounterEnemies(newEnemies);
     }    
   }, []);
@@ -57,7 +56,7 @@ const CurrentEncounter = ({ encounterEnemies, setEncounterEnemies }) => {
         </div>
       <div className='flex flex-col justify-center w-full space-y-3 mt-3'>
         {encounterEnemies.sort((a, b) => b.level - a.level).map((enemy) => (
-          <EnemyCard key={enemy.encounterId} enemy={enemy} handleDamage={handleDamage} />
+          <CombatCard key={enemy.encounterId} enemy={enemy} handleDamage={handleDamage} />
         ))}
       </div>
     </div>

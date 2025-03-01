@@ -7,6 +7,7 @@ class Enemy {
     this.maxHealth = this.health();
     this.currentHealth = data.currentHealth ?? this.health();
     this.encounterId = data.id + Date.now();
+    this.selected = false;
   }
 
   // Method for handling damage
@@ -37,6 +38,10 @@ class Enemy {
     return this.maxMight * this.typeMod();
   }
 
+  toggleSelected() {
+    this.selected = !this.selected;
+    console.log(this.selected);
+  }
 
   typeMod() {
     switch (this.type) {

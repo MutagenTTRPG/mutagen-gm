@@ -40,13 +40,18 @@ const Tag = ({ tag }) => {
         <p>{tagObj.name}</p>
       </div>
       {showTooltip && (
-        <div
-          ref={tooltipRef}
-          className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-max bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg z-50"
-          style={{ left: tooltipPosition.left }}
-        >
-          {tagObj.description}
-        </div>
+       <div
+       ref={tooltipRef}
+       className="fixed w-max bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg z-50"
+       style={{
+         top: `${tooltipRef.current?.getBoundingClientRect().top + window.scrollY - 50}px`, // 10px above the tag
+         left: `${tooltipRef.current?.getBoundingClientRect().left + window.scrollX + 200}px`,
+         transform: 'translateX(-50%)'
+       }}
+     >
+       {tagObj.description}
+     </div>
+     
       )}
     </div>
   );
